@@ -1,0 +1,10 @@
+local rand16 = require "rand16.rand16"
+
+function init(self)
+	local random_engine = rand16(0xaaaa)
+	pprint(random_engine:next(), random_engine:range(0,9), random_engine:shuffle({1,2,3}))
+	random_engine = rand16(0xeeee)
+	pprint(random_engine:next(), random_engine:range(0,9), random_engine:shuffle({1,2,3}))
+	random_engine = rand16(0x3333)
+	pprint(random_engine:next(), random_engine:range(0,9), random_engine:shuffle({1,2,3}))
+end
