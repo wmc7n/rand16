@@ -19,6 +19,7 @@ return function(seed)
 	end
 
 	ins.shuffle = function(self, ary)
+		ary = {unpack(ary)}
 		for i=1,#ary-1 do
 			local k = #ary-i+1
 			local r = self:range(1, k)
