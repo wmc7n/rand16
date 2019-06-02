@@ -6,7 +6,7 @@ return function(seed)
 	}
 
 	ins.next = function(self)
-		local t = bit.bxor(self.x, bit.lshift(self.x, 9))
+		local t = bit.bxor(self.x, bit.band(bit.lshift(self.x, 9), 0xffff))
 		self.x = self.y
 		self.y = bit.bxor(bit.bxor(self.y, bit.rshift(self.y, 5)), bit.bxor(t, bit.rshift(t, 14)))
 		return self.y
